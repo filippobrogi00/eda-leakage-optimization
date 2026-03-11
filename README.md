@@ -18,14 +18,15 @@ The following additional constraints are imposed:
 - Run time (measured using the TCL clock command on the remote server) must be < 5 minutes.
 
 ## Project Structure:
-- `BasicSwap.tcl`: Basic algorithm which:
-  - (1) ranks cells in the circuit netlist based on descending slack;
-  - (2) replaces the top 50% LVT (highest slack) cells with HVT cells;
-  - (3) replaces the remaining 25% LVT cells with SVT cells.
-- `OptimizedSwap.tcl`: More advanced algorithm which:
-  - (1) ranks cells in the circuit netlist based on descending slack;
-  - (2) swap highest slack cells to HVT, and if doing so introduces a timing violation, the cell is reverted to its original type;
-  - (3) for cells which were reverted, try swapping to SVT, and if introducing a timing violation, revert back.
+- `src`: Directory containing TCL scripts:
+  - `BasicSwap.tcl`: Basic algorithm which:
+    - (1) ranks cells in the circuit netlist based on descending slack;
+    - (2) replaces the top 50% LVT (highest slack) cells with HVT cells;
+    - (3) replaces the remaining 25% LVT cells with SVT cells.
+  - `OptimizedSwap.tcl`: More advanced algorithm which:
+    - (1) ranks cells in the circuit netlist based on descending slack;
+    - (2) swap highest slack cells to HVT, and if doing so introduces a timing violation, the cell is reverted to its original type;
+    - (3) for cells which were reverted, try swapping to SVT, and if introducing a timing violation, revert back.
 - `SYN Contest.pdf`: Report containing both algorithm's results, which were able to save at least 60% leakage power in both benchmarks (`c1908` and `c5315`).
 
 More details can be found in the report `SYN Contest.tcl`.

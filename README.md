@@ -1,4 +1,4 @@
-# Multi-Vth-Cell-Swap
+# Multi-Threshold Leakage Power Optimization
 TCL script for post-synthesis leakage power minimization using multiple cell libraries [LVT (Low), SVT (Standard), HVT (High)]. Starting circuit netlist is composed of all LVT cells.
 
 ## Description
